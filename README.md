@@ -1,13 +1,13 @@
 # ElixirChat
 
-This sample application demonstrates how an Elixir application on the Phoenix
-framework might look.
+This sample application demonstrates how it might look to develop with Elixir
+and the Phoenix framework, with server deployments via Docker.
 
 It happens to be a simple chatroom using Phoenix's Channels -- a thin
 abstraction over websockets to allow for flexible sending and consumption of
 messages between different technologies. But the main purpose of this
-application is to demonstrate how an Elixir app can be constructed, built
-into a release, and deployed.
+application is to show how an Elixir app can be constructed, built into a
+release, and deployed via Docker.
 
 To start your Phoenix server, do the following steps. See below if you get
 any SSL or certificate errors.
@@ -18,6 +18,36 @@ any SSL or certificate errors.
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your
 browser.
+
+## Building and Running Under Docker
+
+[Distillery](https://github.com/bitwalker/distillery) is the Elixir tool that
+helps us build our application into a "release", the preferred form of an
+application for deployment to a server. As a release, The Elixir and Erlang
+source code has been compiled to pure bytecode, ready to be executed by the
+BEAM (the Virtual Machine) itself.
+
+For our demonstration, we will be building our release directly to a Docker
+container. To set this up, we've followed the [guide provided by the
+Distillery
+project](https://hexdocs.pm/distillery/guides/working_with_docker.html).
+
+Make sure you have Docker installed and running, and you can build the
+application with:
+
+```text
+make build
+```
+
+You now have a minimal Docker image with Alpine Linux, the BEAM, and your
+application bytecode. To run the container locally, simply run:
+
+```text
+make run
+```
+
+The application should now be accessible at
+[http://localhost:4000/](http://localhost:4000/).
 
 ## Learn More About Elixir
 
@@ -50,6 +80,8 @@ connections. Try the following:
 * These commands may help, too:
     * `npm set strict-ssl false`
     * `npm set strict-ssl -g false`
+
+Of course you may want to add the environment variable settings to your `~/.bashrc` or `~/.config/fish/config.fish` so they take effect for future terminal sessions.
 
 ## Credits
 
