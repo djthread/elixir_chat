@@ -4,10 +4,7 @@ defmodule ElixirChat.Room do
   """
 
   defmodule Message do
-    @moduledoc """
-    Represents a message in the chatroom
-    """
-
+    @moduledoc "Represents a message in the chatroom"
     defstruct [:name, :body]
   end
 
