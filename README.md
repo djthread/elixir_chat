@@ -26,6 +26,8 @@ new project directory and enter these two commands.
 
 ```bash
 assets/dev-env/go.sh
+mix deps.get
+cd assets; npm install; cd ..
 imp
 ```
 
