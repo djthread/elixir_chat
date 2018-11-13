@@ -5,6 +5,7 @@ defmodule ElixirChat.Room do
 
   defmodule Message do
     @moduledoc "Represents a message in the chatroom"
+    @derive Jason.Encoder
     defstruct [:name, :body]
   end
 

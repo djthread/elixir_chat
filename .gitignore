@@ -26,3 +26,4 @@ npm-debug.log
 # variables.
 /config/*.secret.exs
 workshop.md
+/.elixir_ls
