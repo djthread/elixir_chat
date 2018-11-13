@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  dev:
+    container_name: elixir_chat_dev
+    build:
+      # context: ../..
+      context: .
+      # dockerfile: assets/dev-env/Dockerfile
+    ports:
+      - "4000:4000"
+    volumes:
+      - ../..:/app
+

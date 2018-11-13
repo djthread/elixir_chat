@@ -6,8 +6,8 @@ ENV HEX_UNSAFE_HTTPS=1 \
     NODE_TLS_REJECT_UNAUTHORIZED=0
 
 # Install debian packages
-RUN apt-get update
-RUN apt-get install --yes build-essential inotify-tools
+RUN apt-get update && \
+    apt-get install --yes build-essential inotify-tools fish
 
 # Install Phoenix packages
 RUN mix local.hex --force
@@ -23,6 +23,11 @@ RUN curl -skL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh && \
     bash nodesource_setup.sh && \
     apt-get install nodejs
 
+COPY config.fish /root/.config/fish/config.fish
+
+VOLUME /app
 WORKDIR /app
 
 EXPOSE 4000
+
+ENTRYPOINT fish
