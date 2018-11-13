@@ -19,7 +19,22 @@ any SSL or certificate errors.
 Now you can visit [`localhost:4000`](http://localhost:4000) from your
 browser.
 
-## Building and Running Under Docker
+## Using Docker as a Development Environment
+
+After checking out this repository to your local machine, simply cd into the
+new project directory and enter these two commands.
+
+```bash
+assets/dev-env/go.sh
+imp
+```
+
+The first will launch the fish shell inside the dev environment docker
+container, building it if necessary. The second is a shell alias for `iex -S
+mix phx.server`. See the [fish config](assets/dev-env/config.fish) for this
+and other aliases.
+
+## Building and Running a Release Under Docker
 
 [Distillery](https://github.com/bitwalker/distillery) is the Elixir tool that
 helps us build our application into a "release", the preferred form of an
